@@ -1,0 +1,20 @@
+---
+- name: Install VSCode
+  hosts: all 
+  gather_facts: true
+
+  vars: 
+    bazelcc: StackBuild.bazel-stack-vscode-cc
+    clangd: llvm-vs-code-extensions.vscode-clangd
+  
+  tasks:
+    - name: install bazel-stack-vscode-cc
+      shell: code --install-extension {{ bazelcc }}
+
+    - name: install clangd
+      shell: code --install-extension {{ clangd }}
+      
+        
+      
+        
+      
